@@ -2,8 +2,13 @@
  * Created by Administrator on 2017/2/26 0026.
  */
 define(['jquery'], function ($) {
-    $('.navs a').on('click', function () {
-        $(this).next().slideToggle();
+    $('#logout').on('click', function () {
+        $.post('/v6/logout', function (data) {
+            console.log(data.code);
+            if(data.code == 200){
+                location.href = '/html/home/login.html';
+            }
+        })
     })
 
 
@@ -16,10 +21,10 @@ define(['jquery'], function ($) {
     //    },
     //    success: function (){
     //        location.href = 'http://www.baidu.com';
-    //        console.log('Êàê‰∫Ü');
+    //        console.log('≥…¡À');
     //    },
     //    error: function () {
-    //        console.log('Ë¥•‰∫Ü');
+    //        console.log('∞‹¡À');
     //    }
     //})
 });
