@@ -11,6 +11,8 @@ requirejs.config({
 
         index:'js/index',
 
+        aside:'js/common/aside',
+
         //自己的文件路径配置
         userList:'js/user/list',
         userProfile:'js/user/profile',
@@ -39,7 +41,7 @@ requirejs.config({
 });
 
 //所有的页面都有bootstrap和jq的支持,先把他们加载
-require(['jquery','bootstrap']);
+require(['jquery','bootstrap','aside']);
 
 
 //获取页面的pathname,即路径名，根据页面加载对应的js
