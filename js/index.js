@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/2/25 0025.
  */
-define(['echarts'], function(echarts) {
+define(['echarts','nprogress'], function(echarts,nprogress) {
     console.log('list模块加载')
     // 基于准备好的dom，初始化echarts实例
     var myChart = echarts.init(document.getElementById('main'));
@@ -28,4 +28,8 @@ define(['echarts'], function(echarts) {
 
     // 使用刚指定的配置项和数据显示图表。
     myChart.setOption(option);
+
+
+    // 该页所有的js加载完毕，进度条结束。
+    nprogress.done();
 });

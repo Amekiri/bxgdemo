@@ -1,4 +1,4 @@
-define(['jquery'], function($) {
+define(['jquery','nprogress'], function($,nprogress) {
 	//登录之间读取cook展示用户历史头像
 	//设置登陆页的img-src为对象中的tc_avatar属性值，如果没有给一个默认头像的地址
 	var userInfo = null;
@@ -28,7 +28,10 @@ define(['jquery'], function($) {
 				}
 			}
 		});
+		// 该页所有的js加载完毕，进度条结束。
+		nprogress.done();
 		return false;
 	});
-
+	// 该页所有的js加载完毕，进度条结束。
+	nprogress.done();
 });

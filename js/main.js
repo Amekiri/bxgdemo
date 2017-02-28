@@ -9,6 +9,8 @@ requirejs.config({
         bootstrap:'lib/bootstrap/js/bootstrap',
         echarts:'lib/echarts/echarts.common.min',
         jqueryCookie:'lib/jquery-cookie/jquery.cookie',
+        nprogress:'lib/nprogress/nprogress',
+        template:'lib/artTemplate-3.0.1/template',
 
         index:'js/index',
 
@@ -31,7 +33,9 @@ requirejs.config({
         courseCategory:'js/course/category',
         courseCategoryAdd:'js/course/category_add',
         courseList:'js/course/list',
-        courseTopic:'js/course/topic'
+        courseTopic:'js/course/topic',
+        advertAdd:'js/advert/add',
+        advertList:'js/advert/list'
     },
     shim:{
         bootstrap:{
@@ -44,6 +48,11 @@ requirejs.config({
             deps:['jquery']
         }
     }
+});
+
+//在js加载前开启进度条显示
+require(['nprogress'], function (nprogress) {
+    nprogress.start();
 });
 
 //所有的页面都有bootstrap和jq的支持,先把他们加载
@@ -124,6 +133,12 @@ require(['jquery','bootstrap','aside','header','common']);
                 break;
             case '/html/course/topic.html':
                 require(['courseTopic']);
+                break;
+            case'/html/advert/add.html':
+                require(['advertAdd']);
+                break;
+            case'/html/advert/list.html':
+                require(['advertList']);
                 break;
         }
     })
