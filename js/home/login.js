@@ -1,4 +1,14 @@
 define(['jquery'], function($) {
+	//登录之间读取cook展示用户历史头像
+	//设置登陆页的img-src为对象中的tc_avatar属性值，如果没有给一个默认头像的地址
+	var userInfo = null;
+	try {
+		userInfo = JSON.parse($.cookie('userInfo'));
+	}catch(e){
+		userInfo = {};
+	}
+	$('.login .avatar img').attr('src',userInfo.tc_avatar? userInfo.tc_avatar: '/img/default.png');
+
 	$('#form-login').on('submit', function () {
 		$.ajax({
 			type:'post',
