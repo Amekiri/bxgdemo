@@ -10,7 +10,7 @@ requirejs.config({
         echarts:'lib/echarts/echarts.common.min',
         jqueryCookie:'lib/jquery-cookie/jquery.cookie',
         nprogress:'lib/nprogress/nprogress',
-        template:'lib/artTemplate-3.0.1/template',
+        template:'lib/artTemplate/template',
 
         index:'js/index',
 
