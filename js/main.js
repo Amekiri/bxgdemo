@@ -13,6 +13,9 @@ requirejs.config({
         template:'lib/artTemplate/template',
         datepicker:'lib/bootstrap-datepicker/js/bootstrap-datepicker',
         datepickerLanguage:'lib/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
+        region:'lib/region/jquery.region',
+        ckeditor:'lib/ckeditor/ckeditor',
+        uploadify:'lib/uploadify/jquery.uploadify',
 
         index:'js/index',
 
@@ -52,6 +55,12 @@ requirejs.config({
         },
         datepickerLanguage:{
             deps:['jquery','datepicker']
+        },
+        ckeditor:{
+            exports: 'CKEDITOR'
+        },
+        uploadify:{
+            deps:['jquery']
         }
     }
 });
